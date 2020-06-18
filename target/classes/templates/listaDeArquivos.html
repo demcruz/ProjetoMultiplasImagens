@@ -18,21 +18,21 @@
 				<table id="customerTable" class="table">
 					<thead>
 						<tr>
-							<th>No</th>
-							<th>Filename</th>
+							<th>Nº</th>
+							<th>Nome do Arquivo</th>
 							<th>Download</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="file, rowStat: ${files}">
 					        <td th:text="${rowStat.count}">1</td>
-							<td th:text="${file.filename}">File-Name</td>
-					        <td><a th:href="${file.url}">Link</a></td>
+							<td th:text="${file.filename}">Nome do Arquivo</td>
+					        <td><a th:href="${file.url}">Link para Download</a></td>
 					    </tr>
 					</tbody>
 				</table>
 				<div>
-					<a href="/" class="btn btn-light btn-block" role="button">Back to Upload Form</a>
+					<a href="/" class="btn btn-light btn-block" role="button">Voltar para Pagina Anterior</a>
 				</div>
 			</div>
 		</div>

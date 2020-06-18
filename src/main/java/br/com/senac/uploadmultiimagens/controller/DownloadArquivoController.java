@@ -23,12 +23,12 @@ public class DownloadArquivoController {
 	ArquivoRepository fileRepository;
 	
 	/*
-	 * Retrieve Files' Information
+	 *  Files' Information
 	 */
 	@GetMapping("/files")
 	public String getListFiles(Model model) {
 		List<ArquivoInfo> fileInfos = fileRepository.findAll().stream().map(
-				fileModel ->	{
+				fileModel -> {
 					String filename = fileModel.getName();
 					String url = MvcUriComponentsBuilder.fromMethodName(DownloadArquivoController.class,
 	                        "downloadFile", fileModel.getName().toString()).build().toString();
@@ -38,11 +38,11 @@ public class DownloadArquivoController {
 			.collect(Collectors.toList());
 	
 		model.addAttribute("files", fileInfos);
-		return "listfiles";
+		return "listaDeArquivos.html";
 	}
  
     /*
-     * Download Files
+     * Download Arquivos
      */
 	@GetMapping("/files/{filename}")
 	public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) {

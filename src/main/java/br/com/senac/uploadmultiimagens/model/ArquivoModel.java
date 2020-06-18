@@ -7,11 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import br.com.senac.uploadmultiimagens.audit.DateAudit;
  
 @Entity
 @Table(name="file_model")
-public class ArquivoModel  extends DateAudit {
+public class ArquivoModel   {
 	@Id
 	@GeneratedValue
     @Column(name = "id")
